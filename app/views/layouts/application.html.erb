@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>LayoutExample</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'SiteExample', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'two-column', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'SitejavaScript', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <div id="header">
+    <!-- Header Image Displays here -->
+  </div>
+  <div id="menu">
+    <!-- Header Image Displays here -->
+    <div id="navbar">
+      <ul>
+        <li> <a href="index.htm"> Home </a> </li>
+        <li> <a href="page2.htm"> Books </a></li>
+        <li> <a href="#"> eBooks </a> </li>
+        <li> <a href="#"> Register </a> </li>
+        <li> <a href="#"> Contact Us </a> </li>
+        <li> <a href="#"> Login </a> </li>
+      </ul>
+    </div>
+  </div>
+  <div id="container">
+    <div id="content">
+      <%= yield %>
+    </div>
+    <div id="first-column">
+      <div class="searchbox">
+        <h2 class="BoxHeaders"> Search </h2>
+        <input type="text" name="search" /><input type="submit" value="Search" />
+      </div>
+      <div class="box">
+        <h2 class="BoxHeaders"> Special Offers </h2>
+        <%= image_tag 'Books/Pict1.jpg', name:'Rotating', id:'Rotating1', alt:'Special Offers' %>
+        <script type="text/javascript">
+          RotateImages(1, 0);
+        </script>
+      </div>
+      <div class="box">
+        <h2 class="BoxHeaders"> Newly Published </h2>
+        <%= image_tag 'Books/Pict1.jpg', alt:'New Books' %>
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    <h6 class="footertext">&copy; Online Stores NCI &trade; 2014 </h6>
+  </div>
+</body>
+
+</html>
